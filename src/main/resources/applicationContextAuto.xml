@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+<!-- 	<bean id="carBean" class="com.springIoC.auto.Car">
+		<property name="type" value="Sedan" />
+		<property name="model" value="BMW 740" />
+		<property name="price" value="88000" />
+		<property name="engine" ref="engineBean" />
+	</bean>
+
+	<bean id="engineBean" class="com.springIoC.auto.Engine">
+		<property name="horsepower" value="335" />
+		<property name="maxRPM" value="6500" />
+		<property name="displacement" value="3.0" />
+		<property name="cylinderConfig" value="I-6" />
+		<property name="recommendedFuel" value="premium" />
+	</bean>
+
+	<bean id="carBeanCtor" class="com.springIoC.auto.Car">
+		<constructor-arg index="0" name="type" value="Sedan1" />
+		<constructor-arg index="1" name="model"
+			value="BMW1 740" />
+		<constructor-arg index="2" name="price" value="89000" />
+		<constructor-arg index="3" name="engine"
+			ref="engineBeanCtor" />
+	</bean>
+	<bean id="engineBeanCtor" class="com.springIoC.auto.Engine">
+		<constructor-arg name="horsepower" value="335" />
+		<constructor-arg name="maxRPM" value="5500" />
+		<constructor-arg name="displacement" value="3.0" />
+		<constructor-arg name="cylinderConfig" value="I-6" />
+		<constructor-arg name="recommendedFuel"
+			value="premium" />
+	</bean>
+
+	<bean id="carBeanCtor1" class="com.springIoC.auto.Car">
+		<constructor-arg index="0" name="type" value="Sedan1" />
+		<constructor-arg index="1" name="model"
+			value="BMW1 740" />
+		<constructor-arg index="2" name="price" value="89000" />
+		<constructor-arg index="3" name="engine">
+			<bean id="engineBeanCtor1" class="com.springIoC.auto.Engine">
+				<constructor-arg name="horsepower" value="375" />
+				<constructor-arg name="maxRPM" value="7500" />
+				<constructor-arg name="displacement" value="4.0" />
+				<constructor-arg name="cylinderConfig" value="I-5" />
+				<constructor-arg name="recommendedFuel"	value="premium" />
+			</bean>
+		</constructor-arg>
+	</bean>
+	
+	AutoWire Engine bean in Car bean
+	
+	<bean id="carBeanAutoWire" class="com.springIoC.auto.Car" autowire="byName">
+		<property name="type" value="Sedan" />
+		<property name="model" value="BMW 740" />
+		<property name="price" value="88000" />
+	</bean>
+
+	<bean id="engine" class="com.springIoC.auto.Engine">
+		<property name="horsepower" value="335" />
+		<property name="maxRPM" value="6500" />
+		<property name="displacement" value="3.0" />
+		<property name="cylinderConfig" value="I-6" />
+		<property name="recommendedFuel" value="premium" />
+	</bean>
+	 -->
+	<!-- AutoWire Engine bean in Car bean using annotation -->
+	
+	<context:annotation-config/>
+	
+	<bean id="carBeanAutoWireAnnot" class="com.springIoC.auto.Car" >
+		<property name="type" value="Sedan" />
+		<property name="model" value="BMW 780" />
+		<property name="price" value="88000" />
+	</bean>
+
+	<bean id="engineBeanAutoWireAnnot" class="com.springIoC.auto.Engine">
+		<property name="horsepower" value="325" />
+		<property name="maxRPM" value="2500" />
+		<property name="displacement" value="3.0" />
+		<property name="cylinderConfig" value="I-6" />
+		<property name="recommendedFuel" value="premium" />
+	</bean>
+	
+</beans>
