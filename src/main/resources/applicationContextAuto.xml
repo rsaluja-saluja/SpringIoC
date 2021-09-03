@@ -7,13 +7,12 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-<!-- 	<bean id="carBean" class="com.springIoC.auto.Car">
+	<!-- <bean id="carBean" class="com.springIoC.auto.Car">
 		<property name="type" value="Sedan" />
 		<property name="model" value="BMW 740" />
 		<property name="price" value="88000" />
 		<property name="engine" ref="engineBean" />
 	</bean>
-
 	<bean id="engineBean" class="com.springIoC.auto.Engine">
 		<property name="horsepower" value="335" />
 		<property name="maxRPM" value="6500" />
@@ -21,7 +20,6 @@
 		<property name="cylinderConfig" value="I-6" />
 		<property name="recommendedFuel" value="premium" />
 	</bean>
-
 	<bean id="carBeanCtor" class="com.springIoC.auto.Car">
 		<constructor-arg index="0" name="type" value="Sedan1" />
 		<constructor-arg index="1" name="model"
@@ -38,7 +36,6 @@
 		<constructor-arg name="recommendedFuel"
 			value="premium" />
 	</bean>
-
 	<bean id="carBeanCtor1" class="com.springIoC.auto.Car">
 		<constructor-arg index="0" name="type" value="Sedan1" />
 		<constructor-arg index="1" name="model"
@@ -50,43 +47,71 @@
 				<constructor-arg name="maxRPM" value="7500" />
 				<constructor-arg name="displacement" value="4.0" />
 				<constructor-arg name="cylinderConfig" value="I-5" />
-				<constructor-arg name="recommendedFuel"	value="premium" />
+				<constructor-arg name="recommendedFuel"
+					value="premium" />
 			</bean>
 		</constructor-arg>
-	</bean>
-	
-	AutoWire Engine bean in Car bean
-	
-	<bean id="carBeanAutoWire" class="com.springIoC.auto.Car" autowire="byName">
+	</bean> -->
+	<!-- AutoWire Engine bean	in Car bean -->
+	<!-- <bean id="carBeanAutoWire" class="com.springIoC.auto.Car"
+		autowire="byName">
 		<property name="type" value="Sedan" />
-		<property name="model" value="BMW 740" />
+		<property name="model" value="BMW 
+		740" />
 		<property name="price" value="88000" />
 	</bean>
-
 	<bean id="engine" class="com.springIoC.auto.Engine">
 		<property name="horsepower" value="335" />
 		<property name="maxRPM" value="6500" />
 		<property name="displacement" value="3.0" />
 		<property name="cylinderConfig" value="I-6" />
 		<property name="recommendedFuel" value="premium" />
-	</bean>
-	 -->
+	</bean> -->
 	<!-- AutoWire Engine bean in Car bean using annotation -->
-	
-	<context:annotation-config/>
-	
-	<bean id="carBeanAutoWireAnnot" class="com.springIoC.auto.Car" >
+
+	<context:annotation-config />
+
+	<bean id="carBeanAutoWireAnnot" class="com.springIoC.auto.Car">
 		<property name="type" value="Sedan" />
 		<property name="model" value="BMW 780" />
 		<property name="price" value="88000" />
+		<property name="notes">
+			<list>
+				<value>Better engine</value>
+				<value>3 year service included</value>
+			</list>
+		</property>
+		<!-- <property name="availableSeatOptions"> <set> <ref bean="seatOptionOne" 
+			/> <ref bean="seatOptionTwo" /> <ref bean="seatOptionThree" /> </set> </property> -->
 	</bean>
 
-	<bean id="engineBeanAutoWireAnnot" class="com.springIoC.auto.Engine">
+	<bean id="engineBeanAutoWireAnnot"
+		class="com.springIoC.auto.Engine">
 		<property name="horsepower" value="325" />
 		<property name="maxRPM" value="2500" />
 		<property name="displacement" value="3.0" />
 		<property name="cylinderConfig" value="I-6" />
 		<property name="recommendedFuel" value="premium" />
 	</bean>
-	
+
+	<bean id="engineBMW" class="com.springIoC.auto.Engine">
+		<property name="horsepower" value="345" />
+		<property name="maxRPM" value="3500" />
+		<property name="displacement" value="3.0" />
+		<property name="cylinderConfig" value="I-6" />
+		<property name="recommendedFuel" value="premium BMW" />
+	</bean>
+
+	<bean id="seatOptionOne" class="com.springIoC.auto.Seats">
+		<property name="type" value="leather" />
+		<property name="color" value="Black" />
+	</bean>
+	<bean id="seatOptionTwo" class="com.springIoC.auto.Seats">
+		<property name="type" value="leather" />
+		<property name="color" value="Red" />
+	</bean>
+	<bean id="seatOptionThree" class="com.springIoC.auto.Seats">
+		<property name="type" value="leather" />
+		<property name="color" value="Gray" />
+	</bean>
 </beans>

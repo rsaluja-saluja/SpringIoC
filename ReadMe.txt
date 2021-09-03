@@ -16,15 +16,15 @@ IoC - Inversion of Control
 	Other methods:
 		Factory method
 		Service locator
-	Belefits:
+	Benefits:
 		Running Task is independent from its implementations.
 		Modularity makes it easier to test
-		Implementatio can be changed easily
+		Implementation can be changed easily
 		Provides much of plumbing work required by applications.
 		
-Bean Configuraion:
+Bean Configuration:
 	in XML File
-	Java based configuraion(Using annotaions and confuguraion class)
+	Java based configuration(Using annotations and configuration class)
 
 IoC container Types:
 		BeanFactory
@@ -35,7 +35,7 @@ IoC container Types:
 			extension of BeanFactory
 			Bean configuration in XML File
 			Beans are created proactively - when applicationContext is loaded
-			allows to use annotaions based DI
+			allows to use annotations based DI
 				Way1:
 					@Component - with bean class
 					@Configuration, @ComponentScan - Java configuration file
@@ -72,7 +72,7 @@ Referencing Beans:
 		or defining engine bean itself inside Car bean
 
 Autowiring Bean:
-	USe autowire attribute in bean definition in XML file
+	Use autowire attribute in bean definition in XML file
 		No need to specify engine as property in CarBean
 		use autowire="byName" in CarBean - engine bean name should be same as property name
 		use autowire="byType" otherwise
@@ -81,3 +81,13 @@ Autowiring Bean:
 	Use Autowired annotation with engine property in Car.java. It will call default ctor and doesn't call setter method setEngine()
 	USe @Autowired with setter method, it will cal default ctor and also call setter method
 	USe @Autowired with parametrized ctor, carbean should be defined with ctor arg instead of property tags
+
+	Use Bean Configuration to define autowired beans
+		be default the bean name is same as method name.
+		
+Autowiring limitation:
+	@Autowired(required = false) can be used to make the property false. 
+		By Default its true, it will throw exception is bean is not available.
+	@Qualifier("engineBMW") along with @Autowired
+		If more than one bean then also give error.
+	

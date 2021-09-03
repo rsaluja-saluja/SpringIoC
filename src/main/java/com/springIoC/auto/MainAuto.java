@@ -1,6 +1,7 @@
 package com.springIoC.auto;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MainAuto {
@@ -23,6 +24,10 @@ public class MainAuto {
 //		
 		Car carBeanAutoWireAnnot = (Car) appCtx.getBean("carBeanAutoWireAnnot");
 		System.out.println("Car Ctor AutoWire: "+ carBeanAutoWireAnnot);
+		
+		AnnotationConfigApplicationContext appContext = new AnnotationConfigApplicationContext(CarBeanConfig.class);
+		Car carBean = (Car) appContext.getBean("carBean");
+		System.out.println("Car Bean AutoWire via Bean Config : "+ carBean);
 	}
 
 }

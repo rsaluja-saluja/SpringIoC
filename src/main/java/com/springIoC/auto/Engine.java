@@ -11,11 +11,14 @@ public class Engine {
 	
 	public Engine() {
 		super();
+		System.out.println("Engine parameterized ctor");
+
 		// TODO Auto-generated constructor stub
 	}
 
 	public Engine(int horsepower, int maxRPM, float displacement, String cylinderConfig, String recommendedFuel) {
 		super();
+		System.out.println("Engine parameterized ctor");
 		this.horsepower = horsepower;
 		this.maxRPM = maxRPM;
 		this.displacement = displacement;
@@ -27,6 +30,8 @@ public class Engine {
 		return horsepower;
 	}
 	public void setHorsepower(int horsepower) {
+		System.out.println("Engine Setter ctor");
+
 		this.horsepower = horsepower;
 	}
 	public int getMaxRPM() {
